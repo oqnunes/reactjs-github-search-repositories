@@ -2,8 +2,11 @@
 
 # dependencies
 /node_modules
+/progress
 /.pnp
 .pnp.js
+yarn.lock
+icon.svg
 
 # testing
 /coverage

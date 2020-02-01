@@ -1,4 +1,4 @@
-# react-interview-exercise-done
+# reactjs-github-search-repositories
 
 ## Pre-requisites
 
