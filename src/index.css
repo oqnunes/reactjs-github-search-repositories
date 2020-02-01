@@ -1,13 +1,374 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body{
+  height: 100%;
+}
 body {
+  width: 100%;
+  height: 100%;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: cornflowerblue;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+
+}
+button:focus {outline:0;}
+#root{
+  width: 1200px;
+  height: 100%;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  overflow: visible;
+}
+.my-boxLogin{
+  width: 330px;
+  height: 500px;
+
+  margin-top: 40px;
+
+  background-color: white;
+
+  border-radius: 3px;
+  
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(115,115,115,1);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(115,115,115,1);
+  box-shadow: 0px 0px 5px 0px rgba(115,115,115,1);
+}
+.my-boxLogo{
+  width: 100%;
+  height: 160px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 72px;
+  color: cornflowerblue;
+}
+.my-boxTitle{
+  width: 100%;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  font-size: 28px;
+  font-weight: 500;
+}
+.my-boxForm{
+  padding: 20px;
+}
+.my-form-input-settings-top{
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+
+  border-top-width: 0;
+}
+.my-form-input-settings-bottom{
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.my-form-input-settings-align{
+  width: 100%;
+
+  padding-top: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.my-contentLoading{
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  background-color: rgba(99, 150, 231, 0.9);
+  color: white;
+
+  position: absolute;
+}
+.my-boxImage-Loading{
+  width: 100%;
+  height: 50%;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  font-size: 48px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@media (prefers-reduced-motion: no-preference) {
+  .my-spinner {
+    animation: App-logo-spin infinite 1s linear;
+  }
 }
+.my-boxText-Loading{
+  width: 100%;
+  height: 50%;
+
+  padding-top: 20px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  font-size: 28px;
+}
+
+.my-boxHome{
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.my-boxSearch{
+  width: 550px;
+  min-height: 300px;
+  padding: 20px;
+  margin-right: 20px;
+  background-color: white;
+
+  border-radius: 3px;
+  
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(115,115,115,1);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(115,115,115,1);
+  box-shadow: 0px 0px 5px 0px rgba(115,115,115,1);
+}
+.my-content-search-title{
+  width: 100%;
+  padding: 20px 0px 10px 0px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 32px;
+}
+.my-content-search-subtitle{
+  width: 100%;
+  height: 40px;
+  padding: 0px 20px 0px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  font-size: 16px;
+}
+.my-form-group{
+
+  padding-top: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.my-fg-row1{
+  width: 100%;
+}
+.my-content-list{
+  width: 100%;
+
+  padding: 20px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  background-color: white;
+
+  border-radius: 3px;
+  
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(115,115,115,1);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(115,115,115,1);
+  box-shadow: 0px 0px 5px 0px rgba(115,115,115,1);
+}
+.my-box-card{
+  width: 49%;
+  min-height: 100px;
+  margin-bottom: 10px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+  border: 0.5px solid rgba(1,1,1,0.1);
+  border-bottom: 0;
+  border-radius: 3px;
+
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(240,240,240,1);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(240,240,240,1);
+  box-shadow: 0px 0px 5px 0px rgba(240,240,240,1);
+
+  cursor: pointer;
+}
+.my-bc-content-img{
+  width: 25%;
+  height: 80px;
+  padding: 10px 0px 0px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.my-img-profile{
+  width: 60px;
+  border-radius: 50%;
+  border: 2px solid black;
+}
+.my-repo-names{
+  width: 75%;
+  height: 70px;
+  padding-left: 10px;
+}
+.my-repo-name{
+  width: 100%;
+  min-height: 40px;
+  padding-top: 12px;
+  display: flex;
+  align-items: flex-end;
+  font-weight: 600;
+  font-size: 14px;
+}
+.my-repo-username{
+  width: 100%;
+  height: 40px;
+  font-size: 14px;
+}
+.my-repo-description{
+  width: 100%;
+  min-height: 30px;
+  padding: 10px 20px 20px 20px;
+  font-size: 15px;
+
+  color: rgba(1,1,1,0.6)
+}
+.my-repo-actions{
+  width: 100%;
+  min-height: 20px;
+
+}
+.my-repo-buttons{
+  width: 50%;
+  padding: 4px;
+
+  font-size: 14px;
+  font-weight: bold;
+  color: rgba(1,1,1,0.6);
+
+  background-color: rgba(115,115,115,0.1);
+
+  border: 0.5px solid rgba(1,1,1,0.1);
+
+  outline: none;
+  text-decoration: none;
+}
+.my-btn1{
+  border-radius: 0px 0px 0px 3px;
+  border-right: 0;
+  border-left: 0;
+}
+.my-btn2{
+  border-radius: 0px 0px 3px 0px;
+}
+.boxNullSearch{
+  width: 100%;
+  display: flex;
+  padding-bottom: 20px;
+  align-items: center;
+  justify-content: flex-end;
+}
+.my-content-nav-buttons{
+  width: 100%;
+  padding: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+}
+.my-nav-button{
+  padding: 20px;
+
+  border: 0;
+  background-color: transparent;
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+@media (max-width: 1039.98px) {
+  .my-box-card{
+    width: 100%;
+  }
+
+}
+@media (max-width: 991.98px) { 
+  #root{
+    width: 670px;
+  }
+  .my-content-search-title{
+    font-size: 22px;
+  }
+  .my-content-search-subtitle{
+    font-size: 14px;
+  }
+
+}
+@media (max-width: 767.98px) { 
+  #root{
+    width: 100%;
+    margin: 0px 30px 0px 30px;
+  }
+  .my-boxSearch{
+    width: 100%;
+    margin-right: 0;
+  }
+  .my-boxHome{
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .my-content-list{
+    margin-top: 20px;
+  }
+}
+@media (max-width: 500.98px) { 
+  #root{
+    width: 100%;
+    margin: 0;
+  }
+}
+
+
+

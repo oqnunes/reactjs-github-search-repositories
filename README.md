@@ -1,68 +1,41 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# react-interview-exercise-done
 
-## Available Scripts
+## Pre-requisites
 
-In the project directory, you can run:
+* node v12.13.0+
+* yarn v1.12.1+
 
-### `yarn start`
+## Used Libraries
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* [Axios](https://github.com/axios/axios) to handle APIs.
+* [React Router DOM](https://reacttraining.com/react-router/web/guides/quick-start) to handle web front-end navigation.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## ToolKits Used
 
-### `yarn test`
+* [Bootstrap 4](https://getbootstrap.com/) for some stylizations
+* [Font Awsome](https://fontawesome.com/) for icons icons set.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## GitHub API
 
-### `yarn build`
+* [Search Repositories](https://developer.github.com/v3/search/#search-repositories)
+* [Search Repositories Pagination](https://developer.github.com/v3/search/#search-repositories)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Exercise
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Create a page to search for Github Repos Page. Use GitHub Api for Repository Search. Using the session stored at local storage, make sure when the user enter application it checks a user is logged in and if so, go to Repositories Page, if not, go to Sign In Page. After login, user should be redirected to Repositories Page.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## What was Done.
 
-### `yarn eject`
+At Index, first of all it is validated if the user is already logged in. If so, it is navigated to the Home page. Otherwise, it remains on the login page to login.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Required property is used in both the E-mail field and the Password field to validate the existence of data. After lighting the login, a key is created for the session called login by passing an array of objects containing the email and password. Then go to the Home page.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+At Home, first of all it is valid if the user is already logged in. If not, you are directed to the Login page.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+When starting a new search, we send the query to the GitHub API with two more parameters: The "Per Page" and the "Current Page" to control the pagination of the results. We will use 16 results per page, with API information like the repository name, owner, link and Stars. Clicking on the View button will open a new tab in the browser with the repository link.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Finally, in the results navigation bar, the user will be able to find more search results, always paginated for 16 results. The user will also be able to clear all sessions started when logging in.
 
-## Learn More
+## Style
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Own styling was used with some Bootstrap components, such as Form and Buttons.
