@@ -1,19 +1,22 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
 
-export default function NullSearch(){
+export default function NullSearch(props){
 
-  const history = useHistory();
-
-  async function handleLogOut(e){
-    e.preventDefault();
-    sessionStorage.clear();
-    history.push('/');
-  };
+  const visibility = props.visibility;
 
   return(
-    <div className="boxNullSearch">
-      <button type="button" onClick={handleLogOut} className="btn btn-danger">Logout</button>
+    <div className="boxNullSearch" style={{display: visibility}}>
+      <div className="titleEmptyResearch">
+        Your research will be here.
+      </div>
+      <lottie-player
+        src="https://assets6.lottiefiles.com/packages/lf20_MrIjH2.json"  
+        background="transparent"
+        speed="0.4"
+        style={{width: 300, height: 300}}
+        loop
+        autoplay >
+      </lottie-player>
     </div>
   );
 };

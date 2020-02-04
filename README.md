@@ -7,13 +7,14 @@
 
 ## Used Libraries
 
-* [Axios](https://github.com/axios/axios) to handle APIs.
+* [Axios](https://github.com/axios/axios) to handle APIs, and make code more clean.
 * [React Router DOM](https://reacttraining.com/react-router/web/guides/quick-start) to handle web front-end navigation.
 
 ## ToolKits Used
 
 * [Bootstrap 4](https://getbootstrap.com/) for some stylizations
 * [Font Awsome](https://fontawesome.com/) for icons icons set.
+* [LottieFiles](https://lottiefiles.com/) for animations images.
 
 ## GitHub API
 

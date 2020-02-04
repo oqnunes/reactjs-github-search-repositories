@@ -20,6 +20,7 @@ function Home() {
   const [thisPage, setThisPage] = useState(1);
   const [searchReturn, setSearchReturn] = useState({ query: '', items: [] });
   const [hideNav, setHidenav] = useState('none');
+  const [hideResearch, setHideResearch] = useState('flex');
   const perPage = 16;
   const prevButton = document.getElementById('prevButton');
 
@@ -39,6 +40,7 @@ function Home() {
     e.preventDefault();
     await loadSearch(InputValue, 1);
     prevButton.disabled = true;
+    setHideResearch('none');
     setHidenav('flex');
   };
 
@@ -60,10 +62,36 @@ function Home() {
     loadSearch(InputValue, nextPage);
   };
 
+
+  function handleDropBox(){
+    const dropBox = document.getElementById('dropBox');
+    if(dropBox.style.opacity === "1"){
+      dropBox.style.opacity = "0";
+    }else{
+      dropBox.style.opacity = "1";
+    }
+  }
+
+  async function handleLogOut(e){
+    e.preventDefault();
+    sessionStorage.clear();
+    history.push('/');
+  };
+
+
   return (
     <div className="my-boxHome">
 
       <div className="my-boxSearch">
+
+        <div onClick={handleDropBox} className="my-btn-dropbox1">
+          <i className="fas fa-ellipsis-h"></i>
+        </div>
+        <div className="my-box-dropbox" id="dropBox">
+          <div className="my-dropbox-li" onClick={handleLogOut}>
+            Logout
+          </div>
+        </div>
 
         <div className="my-content-search-title">
           Search GitHub Repos
@@ -96,7 +124,7 @@ function Home() {
         
       </div>
       <div className="my-content-list" id="my-list">
-        <NullSearch />
+        <NullSearch visibility={hideResearch} />
 
         {
           searchReturn.items.map(returns => (
